@@ -1,0 +1,65 @@
+//input from user
+var user=prompt("Your character has reached a safe area! What would you like to do: EAT, SLEEP, DRINK, or SHOWER?").toLowerCase();
+
+
+//switch statement
+switch(user){
+    case 'eat':
+        //prompts user y/n question
+        console.log("Yum, let's open your bag and see what you have!");
+        var hunger=prompt("Do you want to eat right now?").toLowerCase();
+        var avail=prompt("Looks like there's smoked ham! How does that sound?").toLowerCase();
+        //if both answers are yes
+        if(hunger=="yes" && avail=="yes"){
+            console.log("Guten Appetit! You receive 5 strength points.")
+        } 
+        //if one is no
+        else if(hunger=="yes" && avail=="no" || hunger=="no" && avail=="yes"){
+            console.log("Well, there's only smoked ham, but if that doesn't sound appetizing now then we'll just have some bread. You receive 2 strength points.")
+        } 
+        //if both are no
+        else {
+            console.log("Great, let me know if you want to eat later! You receive 0 strength points.")
+        };
+        break;
+        
+    case 'sleep':
+        //prompts user y/n question
+        console.log("Sounds good, it's getting pretty late!");
+        var weapons=prompt("Are your weapons washed?").toLowerCase();
+        var armour=prompt("Did you wash your armour?").toLowerCase();
+        //if both are yes
+        if(weapons=="yes" && armour=="yes"){
+            console.log("Sounds good! You receive 5 strength points.")
+        } 
+        //if one is yes
+        else if(weapons=="yes" && armour=="no" || weapons=="no" && armour=="yes"){
+            console.log("You haven't cleaned up before sleeping! You receive 2 strength points.")
+        } 
+        //if both are no
+        else {
+            console.log("You need to clean your weapons and wash your armour before you sleep! You receive 0 strength points.")
+        };
+        break;
+        
+    case 'drink':
+        //prompts user y/n question
+        console.log("Sounds great!");
+        var water=prompt("Is there a river or stream nearby?").toLowerCase();
+        //if answer is yes
+        if(water=="yes"){
+            console.log("Ah, refreshing! You receive 5 strength points.")
+        } 
+        //if answer is no
+        else {
+            console.log("Looks like you'll have to drink day-old water from your canister. You receive 2 strength points.")
+        };
+        break;
+        
+    case 'shower':
+        console.log("Can't get more refreshing than that! You receive 5 strength points.")
+        break;
+        
+    default:
+        console.log("Sorry, I can't read that!");
+};
